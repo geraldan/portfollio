@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: darkgreen;
+}
+
+nav{
+    background-color: brown;
+    display: flex;
+    padding: 1em;
+    color: burlywood;
+    font: 2em serif;
+    font-weight: bold;
+}
+div a {
+    margin: 1em;
+    text-decoration: none;
+}
+.ligne_verticale
+{
+    background-color: darkblue;
+    margin-top: 3em;
+    width:5px;
+    height:2000px;
+}
+.jojo{
+    height: 800px;
+}
+.competence {
+    display: flex;
+    justify-content: space-around;
+}
+.left, .right{
+    width: 49%;
+    
+}
+
+.left-text{background:#139ee0;
+    position: relative;
+    margin-left: 60px;
+    background: white;
+    border-radius: 0.25em;
+    padding: 1em;
+    box-shadow: 0 3px 0 #AFAFAF;
+
+}
+.arrow{
+background-color: darkgoldenrod;
+width: 80%;
+}
+
