@@ -9,45 +9,45 @@ body{
 nav{
     background-color: brown;
     display: flex;
+    margin-bottom: 2em;
     padding: 1em;
     color: burlywood;
     font: 2em serif;
     font-weight: bold;
 }
-div a {
-    margin: 1em;
-    text-decoration: none;
+.lineProjet{
+    position: relative;
 }
-.ligne_verticale
-{
-    background-color: darkblue;
-    margin-top: 3em;
-    width:5px;
-    height:2000px;
-}
-.jojo{
-    height: 800px;
-}
-.competence {
+.align{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
-.left, .right{
-    width: 49%;
+.bar{
+    position: absolute;
+    background-color: goldenrod;
+    width: 5px;
+    height: 2000px;
+}
+
+.projetLeft{
+    background-color: rgb(0, 0, 0);
+    margin: 1em 0;
+    
+   
+}
+.projetRight{
+    background-color: deepskyblue;
+    display: flex;
+    justify-content: flex-end;
+    margin: 1em 0;
     
 }
 
-.left-text{background:#139ee0;
-    position: relative;
-    margin-left: 60px;
-    background: white;
-    border-radius: 0.25em;
-    padding: 1em;
-    box-shadow: 0 3px 0 #AFAFAF;
-
-}
-.arrow{
-background-color: darkgoldenrod;
-width: 80%;
+.projet{
+    background-color: darkviolet;
+    width: 20%;
+    padding:5em;
+    text-align: center;
+    border-radius: 0.5em;
 }
 
