@@ -1,24 +1,42 @@
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth ;
 }
 
 body{
-    background-color: darkgreen;
+    background-color: rgb(102, 102, 102);
+    
+
 }
 
 nav{
-    background-color: brown;
+    top: 0; 
     display: flex;
-    margin-bottom: 2em;
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    background-color: black;
     padding: 1em;
-    color: burlywood;
-    font: 2em serif;
-    font-weight: bold;
 }
-.projets{
-    margin: 0 10%;
-    width: 80%;
+#nav, #nav1, #nav2, #nav3{
+    background-color: black;
+    font: 2em serif;
+    border: none;
+    padding: 0 1em;
+    color: white;
+}
+:focus{
+    outline: none;
+}
+#nav:hover, #nav1:hover, #nav2:hover, #nav3:hover{
+    cursor: pointer;
+}
+.mt-8{
+    margin-top: 8em;
+}
+#projets{
+    margin: auto;
     
 }
 
@@ -26,25 +44,29 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(240, 9, 9);
-    margin: 1em 0;
+    margin: auto;
+    margin-top: 5em;
+    width: 80%;
 }
 
 .info{
-    background-color: ivory;
-    width: 20%;
+    color: cornsilk;
+    width: 30%;
     padding: 2em;  
 
 }
 
+
 .projet{
-    background-color: darkviolet;
-    width: 20%;
+    background-color: rgb(0, 0, 0);
+    width: 30%;
     height: 200%;
     padding:5em;
     text-align: center;
     align-items: center;
     border-radius: 0.5em;
+    color: cornsilk;
+    opacity: 0.;
 }
 
 
@@ -59,30 +81,9 @@ h2{
     justify-content: center;
     
 }
-.html{
-    background-color: hotpink;
-    text-align: center;
-    width: 20%;
-    margin: 2em auto;
-    border-radius: 2em;
-    padding: 1em;
-
+hr{
+    margin: 6em 0;
 }
-.css{
-    background-color: hotpink;
-    text-align: center;
-    width: 20%;
-    margin: 2em auto;
-    border-radius: 2em;
-    padding: 1em;
-
+img{
+    margin: 2em;
 }
-.php{
-    background-color: hotpink;
-    text-align: center;
-    width: 20%;
-    margin: 2em auto;
-    border-radius: 2em;
-    padding: 1em;
-}
-
