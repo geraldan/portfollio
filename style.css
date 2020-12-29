@@ -21,7 +21,7 @@ nav{
 }
 #nav, #nav1, #nav2, #nav3{
     background-color: black;
-    font: 2em serif;
+    font: 1.5em serif;
     border: none;
     padding: 0 1em;
     color: white;
@@ -34,6 +34,11 @@ nav{
 }
 .mt-8{
     margin-top: 8em;
+}
+.picture{
+    margin: 3.7em 0;
+    width: 100%;
+
 }
 #projets{
     margin: auto;
@@ -57,33 +62,100 @@ nav{
 }
 
 
-.projet{
+.slide_left{
+    position: relative;
     background-color: rgb(0, 0, 0);
     width: 30%;
     height: 200%;
     padding:5em;
     text-align: center;
     align-items: center;
-    border-radius: 0.5em;
+    border-radius: 0.8em;
     color: cornsilk;
     opacity: 0.;
+    animation: slide 4s linear;
 }
-
+@keyframes slide{
+    0%{
+        left: -800px;
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    89%{
+        border-radius: .8em;
+    }
+    90%{
+        left: 10px;
+        border-radius: 2em 0 0 2em;
+    }
+    94%{
+        left: 10px;
+        border-radius: .8em;
+    }
+    100%{
+        left: 0;
+        opacity: 1;
+    }
+}
+.slide_right{ 
+    position: relative;
+    background-color: rgb(58, 10, 230);
+    width: 30%;
+    height: 200%;
+    padding:5em;
+    text-align: center;
+    align-items: center;
+    border-radius: 0.8em;
+    color: cornsilk;
+    opacity: 0.;
+    animation: slide 4s linear;
+}
+@keyframes slide{
+    0%{
+        right: -800px;
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    89%{
+        border-radius: .8em;
+    }
+    90%{
+        right: 10px;
+        border-radius: 2em 0 0 2em;
+    }
+    94%{
+        right: 10px;
+        border-radius: .8em;
+    }
+    100%{
+        right: 0;
+        opacity: 1;
+    }
+}
 
 h2{
    text-align: center; 
    font-size: xx-large;
    color: honeydew;
-
 }
+
 .competency{ 
     display: flex;
     justify-content: center;
-    
 }
+
 hr{
     margin: 6em 0;
 }
 img{
     margin: 2em;
+}
+
+form{
+    display: flex;
+    justify-content: center;
 }

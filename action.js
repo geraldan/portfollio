@@ -20,7 +20,7 @@ function projet(){
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-//donne lemplacement ou il doit scroller pour competences
+//donne l'emplacement ou il doit scroller pour competences
 function competences(){
     competence.scrollIntoView({behavior: 'smooth'});
 }
@@ -34,4 +34,4 @@ nav.addEventListener("click" , accueil);
 nav1.addEventListener("click" , projet);
 nav2.addEventListener("click" , competences);
 nav3.addEventListener("click" , contacts);
-}
+} 
