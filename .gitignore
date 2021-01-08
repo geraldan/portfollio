@@ -5,3 +5,8 @@
 *.eps
 *.png
 *.webp
+*.txt
+src/jquery-3.5.1.slim.js
+jquery-3.5.1.slim.js
+PHPMailer/
+action.js

@@ -1,13 +1,76 @@
+<!--
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+ 
+/* Exception class. */
+require 'PHPMailer\src\Exception.php';
+/* The main PHPMailer class. */
+require 'PHPMailer\src\PHPMailer.php';
+/* SMTP class, needed if you want to use SMTP. */
+require 'PHPMailer\src\SMTP.php';
+ 
+$mail = new PHPMailer(TRUE);
+ 
+if(isset($_POST['name'])){
+    try {
+        /* Set the mail sender. */
+        $mail->setFrom('mail random', $_POST["name"] );
+        /* Set the mail resever. */
+        $mail->addAddress('andriotgerald.codeur@gmail.com');
+        /* Set the subject. */
+        $mail->Subject = 'Mail Pro' ; // le sujet
+        /* Set the mail message body. */
+        $mail->Body = "le message : " . $_POST["message"] . " Le mail : " . $_POST["mail"];
+ 
+        /* Enable SMTP debug output. */
+        $mail->SMTPDebug = 0; // 2
+ 
+        /* SMTP parameters. */
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com'; // host  localhost
+        $mail->SMTPAuth = TRUE; // TRUE false
+        $mail->SMTPSecure = 'tls'; // ssl
+        $mail->Username = 'andriotgerald.codeur@gmail.com';
+        $mail->Password = 'ANgeCO80';
+        $mail->Port = 587; // port 587
+ 
+        /* Disable some SSL checks. */
+        $mail->SMTPOptions = array(
+           'ssl' => array(
+           'verify_peer' => false,
+           'verify_peer_name' => false,
+           'allow_self_signed' => true
+           )
+        );
+ 
+        /* Finally send the mail. */
+        $mail->send();
+        ?>
+ du code -->
+  <!--      <h3 class="center frag">Votre message a bien été envoyer</h3>
+        <?php
+        }
+        catch (\Exception $e){
+            /* PHP exception (note the backslash to select the global namespace Exception class). */
+            echo $e->getMessage();
+        }
+    }
+    ?>
+-->
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="jquery-3.5.1.slim.js"></script>
         <script type="text/javascript" src="action.js"></script>
         <title>Document</title>
     </head>
+    
     <body>
+
         <nav> <!--Barre de naviguation--> 
             <button id="nav">Accueil</button>
             <button id="nav1">Projet</button>
@@ -21,16 +84,15 @@
                 <div id="pro" class="slide_right">
                     <p> Il fait le petit chat dans le spéctacle de fin d'année</p>
                 </div>
-                <div class="info">
+                <div class="info" id="appear" data-delai="0">
                     <p> information sur le peyi chat qui vesait du véLore</p> 
                 </div>
-            </div>
         </div>
 
                                             <!--Projet numéro 1-->
-                                  
+        <div style="overflow: hidden;">
             <div class="projetLeft">
-               <div class="info">
+               <div class="info reveal">
                     <p> information sur le peyi chat qui vesait du véLore</p> 
                </div>
                <div class="slide_left">
@@ -41,7 +103,7 @@
         <div class="projets">                            
             <div class="projetLeft">
                 <div class="slide_right">
-                    <p class="">Il fait le petit chat dans le spéctacle de fin d'année</p>
+                    <p>Il fait le petit chat dans le spéctacle de fin d'année</p>
                 </div>
                 <div class="info">
                    <p>information sur le peyi chat qui vesait du véLorem ipsum dolor sit, amet consectetur adipisicing elit. Similique dolorum aliquam quos totam, soluta reprehenderit quod dolores et pariatur aperiam velit animi a eveniet dfg segstrgs srgserg srgsergserg rgsergerg esrgsergseg sregsergs sregserg erges ergesgsergr rgg rgesrges ergesg ergsrgergreg </p>                    
@@ -79,7 +141,7 @@
                 <div class="info">
                      <p> information sur le peyi chat qui vesait du véLore</p> 
                 </div>
-                <div class="slide_right">
+                <div class="slide_left">
                     <p> Il à fait un ptit chapeau en papier macher</p>
                 </div>
             </div>
@@ -91,12 +153,12 @@
                <div class="slide_right"> 
                    <p> Il fait le petit chat dans le spéctacle de fin d'année</p>
                </div>
-               <div class="info">
-                  <p> information sur le peyi chat qui vesait du véLore</p> 
+               <div class="info" data-delai="0">
+                  <p> information sur le peyi chat qui vesait du véLore bla bla</p> 
                </div>
             </div>
         </div>  
-
+    </div>
                                     <!--Ligne de démarcation-->
         <hr id="comptence">
 
@@ -117,31 +179,32 @@
         <hr id="contact"> 
                                     <!-- formulaire-->
         <div>
-            <form action="">
+            <H1>FORMULAIRE DE CONTACT</H1>
                 <form action="" method="">
-                    <H1>FORMULAIRE DE CONTACT</H1>
-                        <div class="border">
-                            <p>champ obligatoire *</p>
-                            <div class="textBox">
-                                 <label>Prénom :</label>
-                                 <input type="text" name="first_name" required> *
-                            </div>
-                            <div class="textBox">
-                                <label >Nom :</label>
-                                <input type="text" name="name" required> *
-                            </div>
-                            <div class="textBox">
-                                <label>Mail :</label>
-                                <input type="email" name="mail" required> *
-                            </div>
-                            <div class="textBox">
-                                <label>Adresse :</label>
-                                <input type="text" name="adress"> 
-                            </div>
-                                <input  type="submit" value="Envoyer le formulaire" class="send">
+                    <div class="border">
+                        <p>champ obligatoire *</p>
+                        <div class="textBox">
+                             <label>Prénom: *</label>
+                             <input type="text" name="first_name"  placeholder="Entrer votre prénom" required>
                         </div>
-                </form>
-            </form>
-        
+                        <div class="textBox">
+                            <label >Nom: *</label>
+                            <input type="text" name="name"  placeholder="Entrer votre Nom" required>
+                        </div>
+                        <div class="textBox">
+                            <label>Mail: *</label>
+                            <input type="email" name="mail"  placeholder="Entrer votre mail">
+                        </div>
+                        <div class="textAre">
+                            <label>commentaire:</label>
+                            <textarea class="text" rows="20" cols="60" name="" placeholder="Entrer votre commentair"></textarea> 
+                        </div>
+                            <input  type="submit" value="Envoyer le formulaire" class="send">
+                    </div>
+                </form> 
+        </div>      
+        <div class="test">
+           
+        </div> 
     </body>
 </html>
