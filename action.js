@@ -40,22 +40,23 @@ nav3.addEventListener("click" , contacts);
 
 
 
-
+const ratio = .1
 const options = {
   root: null,
   rootMargin: '0px',
-  threshold: .1
+  threshold: ratio
 }
 const handleIntersect = function (entries, observer) {
   entries.forEach(function (entry) {
-    console.log(entry.intersectionRatio)
+    if (entry.intersectionRatio > ratio) {
+      entry.target.classList.add('reveal-visible')
+      observer.unobserve(entry.target)
+    }
   })
+}
 
-
-const observer = new IntersectionObserver(handleIntersect, options)
-observer.observe(document.querySelector('.reveal'))
-
-} /* <- rien après */
+const observer = new IntersectionObserver(handleIntersect, options);
+observer.observe(document.querySelector('.reveal'));
 /*
 // apparition des ellements
 $(window).scroll(function(){
@@ -72,3 +73,4 @@ $(window).scroll(function(){
   });
 });
 */
+} /* <- rien après */

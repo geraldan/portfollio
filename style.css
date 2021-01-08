@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth ;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -62,9 +62,12 @@ nav{
 }
 .reveal{
     opacity: 0;
+    scale: .5;
 }
 .reveal-visible{
+    transition: 3s;
     opacity: 1;
+    scale: 1;
 }
 
 
